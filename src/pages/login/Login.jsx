@@ -1,7 +1,5 @@
 import { useContext, useState } from 'react';
 import { BsGoogle } from 'react-icons/bs';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase';
 import Logo from '../../assets/logo.png'
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
@@ -17,22 +15,6 @@ const Login = () => {
 
   const { dispatch } = useContext(AuthContext);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        dispatch({type:"LOGIN", payload:user})
-        navigate('/');
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setError(true);
-    })
-    
-  }
 
   return (
     <>
@@ -40,7 +22,7 @@ const Login = () => {
           <img src={Logo} alt="img" />
         </div>
         <div className="Auth-form-container">
-          <form className="Auth-form" onSubmit={handleLogin}>
+          <form className="Auth-form" >
             <div className="Auth-form-content">
               <h3 className="Auth-form-title">Sign In</h3>
               <div className="form-group mt-3">
