@@ -1,0 +1,24 @@
+.purchases {
+  display: flex;
+
+  .purchasesContainer {
+      flex: 6;
+      .quick-access-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          grid-gap: 10px;
+          margin-bottom: 20px;
+          padding: 10px;
+      }
+      .chart-and-table-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+          grid-gap: 20px;
+          margin-bottom: 20px;
+          padding: 3%;
+          align-items: center;
+        }
+
+  }
+
+}

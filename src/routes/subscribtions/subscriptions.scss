@@ -1,0 +1,17 @@
+.subscriptions {
+    display: flex;
+
+    .subscriptionsContainer {
+        flex: 6;
+        .top-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+          }
+          
+          .top-container > * {
+            margin-right: 20px;
+          }
+    }
+
+}

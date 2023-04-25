@@ -1,0 +1,302 @@
+{
+    "drivers": [
+        {
+            "id": "D001",
+            "full_name": "Youssef Benali",
+            "picture": "https://example.com/youssef-benali.jpg",
+            "role": "Senior Driver",
+            "license_plate_number": "ABC123",
+            "phone_number": "+212 600-123456",
+            "email": "youssef.benali@example.ma"
+        },
+        {
+            "id": "D002",
+            "full_name": "Fatima El Khayat",
+            "picture": "https://example.com/fatima-elkhayat.jpg",
+            "role": "Junior Driver",
+            "license_plate_number": "DEF456",
+            "phone_number": "+212 600-234567",
+            "email": "fatima.elkhayat@example.ma"
+        },
+        {
+            "id": "D003",
+            "full_name": "Ahmed Amrani",
+            "picture": "https://example.com/ahmed-amrani.jpg",
+            "role": "Lead Driver",
+            "license_plate_number": "GHI789",
+            "phone_number": "+212 600-345678",
+            "email": "ahmed.amrani@example.ma"
+        },
+        {
+            "id": "D004",
+            "full_name": "Nadia Berrada",
+            "picture": "https://example.com/nadia-berrada.jpg",
+            "role": "Senior Driver",
+            "license_plate_number": "JKL012",
+            "phone_number": "+212 600-456789",
+            "email": "nadia.berrada@example.ma"
+        }
+    ],
+    "expenses": [
+        {
+            "name": "Fuel",
+            "category": "Transportation",
+            "cost": 1500,
+            "date": "2023-04-13",
+            "description": "Fuel for delivery vehicles",
+            "source_account": "Bank Account 1"
+        },
+        {
+            "name": "Vehicle Maintenance",
+            "category": "Maintenance",
+            "cost": 800,
+            "date": "2023-04-12",
+            "description": "Routine maintenance for delivery vehicles",
+            "source_account": "Bank Account 2"
+        },
+        {
+            "name": "Office Rent",
+            "category": "Overhead",
+            "cost": 5000,
+            "date": "2023-04-01",
+            "description": "Monthly rent for office space",
+            "source_account": "Money Register 1"
+        }
+    ],
+    "bank_accounts": [
+        {
+            "id": "BA001",
+            "bank_name": "Attijariwafa Bank",
+            "account_number": "12345678901234567890",
+            "balance": 50000
+        },
+        {
+            "id": "BA002",
+            "bank_name": "Banque Populaire",
+            "account_number": "09876543210987654321",
+            "balance": 25000
+        },
+        {
+            "id": "BA003",
+            "bank_name": "BMCE Bank",
+            "account_number": "24681012141618202224",
+            "balance": 75000
+        }
+    ],
+    "money_registers": [
+        {
+            "id": "MR001",
+            "location": "Warehouse 1",
+            "balance": 10000
+        },
+        {
+            "id": "MR002",
+            "location": "Warehouse 2",
+            "balance": 5000
+        }
+    ],
+    "sales": [
+        {
+            "client": "ABC Company",
+            "payment_method": "Credit Card",
+            "type": "Sale",
+            "date": "2023-04-15",
+            "description": "Product A",
+            "amount": 1000,
+            "sectors": [
+                "Martil",
+                "Fnideq"
+            ],
+            "article_code": "A001",
+            "quantity": 5,
+            "unit_price": 200,
+            "tax_percentage": 20,
+            "enclosed": true
+        },
+        {
+            "client": "XYZ Corporation",
+            "payment_method": "Cash",
+            "type": "Return",
+            "date": "2023-04-14",
+            "description": "Product B",
+            "amount": -500,
+            "sectors": [
+                "Tetouan",
+                "M'diq"
+            ],
+            "article_code": "B002",
+            "quantity": 2,
+            "unit_price": 250,
+            "tax_percentage": 10,
+            "enclosed": false
+        },
+        {
+            "client": "123 Industries",
+            "payment_method": "Check",
+            "type": "Sale",
+            "date": "2023-04-13",
+            "description": "Product C",
+            "amount": 1500,
+            "sectors": [
+                "Tetouan",
+                "Martil"
+            ],
+            "article_code": "C003",
+            "quantity": 3,
+            "unit_price": 500,
+            "tax_percentage": 15,
+            "enclosed": true
+        }
+    ],
+    "Deliveries": [
+        {
+            "client": "Ahmed",
+            "driverName": "Nadia",
+            "product": "Ain Ifrane 0.33CL",
+            "date": "2023-04-13",
+            "quantity": 10,
+            "unitPrice": 80,
+            "taxCode": "DR1",
+            "taxPercentage": 10,
+            "articleId": "CT001"
+        },
+        {
+            "client": "Said",
+            "driverName": "Abdu",
+            "product": "Ain Ifrane 0.55CL",
+            "date": "2023-04-13",
+            "quantity": 1,
+            "unitPrice": 80,
+            "taxCode": "FOOD",
+            "taxPercentage": 10,
+            "articleId": "CT001"
+        },
+        {
+            "client": "Moha",
+            "driverName": "Nadia",
+            "product": "Laiko 0.33CL",
+            "date": "2023-04-13",
+            "quantity": 50,
+            "unitPrice": 80,
+            "taxCode": "FOOD",
+            "taxPercentage": 10,
+            "articleId": "CT001"
+        }
+    ],
+    "Inventory": [
+        {
+            "id": 1,
+            "name": "Coca Cola",
+            "unit_price": 2.5,
+            "category": "Beverages",
+            "quantity": 100,
+            "minimum_quantity": 20
+        },
+        {
+            "id": 2,
+            "name": "Fanta",
+            "unit_price": 2.5,
+            "category": "Beverages",
+            "quantity": 150,
+            "minimum_quantity": 30
+        },
+        {
+            "id": 3,
+            "name": "Sprite",
+            "unit_price": 2.5,
+            "category": "Beverages",
+            "quantity": 120,
+            "minimum_quantity": 25
+        },
+        {
+            "id": 4,
+            "name": "Mineral water",
+            "unit_price": 1.5,
+            "category": "Beverages",
+            "quantity": 200,
+            "minimum_quantity": 40
+        },
+        {
+            "id": 5,
+            "name": "Orange juice",
+            "unit_price": 3.5,
+            "category": "Juices",
+            "quantity": 80,
+            "minimum_quantity": 15
+        },
+        {
+            "id": 6,
+            "name": "Apple juice",
+            "unit_price": 3.5,
+            "category": "Juices",
+            "quantity": 90,
+            "minimum_quantity": 18
+        }
+    ],
+    "products": [
+      {
+        "id": "1",
+        "name": "Coca Cola",
+        "category": "Beverages",
+        "unit_price": 1.50
+      },
+      {
+        "id": "2",
+        "name": "Lays Chips",
+        "category": "Snacks",
+        "unit_price": 2.00
+      },
+      {
+        "id": "3",
+        "name": "Fresh Orange Juice",
+        "category": "Beverages",
+        "unit_price": 3.50
+      },
+      {
+        "id": "4",
+        "name": "Chicken Sandwich",
+        "category": "Food",
+        "unit_price": 5.00
+      },
+      {
+        "id": "5",
+        "name": "Mineral Water",
+        "category": "Beverages",
+        "unit_price": 1.00
+      }
+    ],
+    "purchases": [
+      {
+        "id": 1,
+        "name": "New delivery truck",
+        "cost": 35000,
+        "date": "2022-01-15",
+        "description": "Purchased a new delivery truck to expand delivery operations",
+        "source_account": "Business checking account"
+      },
+      {
+        "id": 2,
+        "name": "Warehouse rental",
+        "cost": 5000,
+        "date": "2022-02-01",
+        "description": "Rented a new warehouse space for additional storage",
+        "source_account": "Business savings account"
+      },
+      {
+        "id": 3,
+        "name": "New pallet jacks",
+        "cost": 3000,
+        "date": "2022-03-15",
+        "description": "Purchased new pallet jacks for warehouse operations",
+        "source_account": "Business checking account"
+      },
+      {
+        "id": 4,
+        "name": "New forklift",
+        "cost": 15000,
+        "date": "2022-04-01",
+        "description": "Purchased a new forklift to increase warehouse efficiency",
+        "source_account": "Business savings account"
+      }
+    ]
+}

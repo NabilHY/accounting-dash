@@ -1,0 +1,51 @@
+.Auth-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; 
+  }
+  
+  .Auth-form {
+    width: 320px; 
+  }
+  
+  .Auth-form-content {
+    padding: 20px;
+  }
+  
+  .Auth-form-title {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .forgot-password {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  button[type="submit"] {
+    flex: 1; 
+  }
+  
+  button[type="submit"]:first-child {
+    margin-right: 10px; 
+  }
+  
+  .container {
+    display: flex; 
+    justify-content: flex-end; 
+  }
+
+   .header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; 
+  img {
+    max-height: 50%;
+    max-width: 50%;
+  }
+}
