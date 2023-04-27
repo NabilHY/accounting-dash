@@ -7,6 +7,10 @@ import "./datatable.scss";
 const Datatable = () => {
   const [data, setData] = useState([]);
 
+  useEffect(() => {
+    setData('')
+  })
+
 
   console.log(data);
 

@@ -74,7 +74,7 @@ function App() {
             <Route path="products">
               <Route index element={
                <RequireAuth>
-                 <List />
+                 <Products />
                </RequireAuth>
               } />
               <Route path=":productId" element={<Single />} />
