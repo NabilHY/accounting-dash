@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { ProductsContext } from '../../context/productsContext';  
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
 import Categories from '../../components/categories/Category';
@@ -10,6 +11,11 @@ import "./products.scss";
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('ifrane');
   const [data, setData] = useState('');
+  const { products } = useContext(ProductsContext)
+
+  useEffect(() => {
+    console.log(products)
+  }, [])
 
   useEffect(() => {
     console.log(headers);
@@ -51,4 +57,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Products;
