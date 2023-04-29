@@ -8,13 +8,13 @@ export const ProductsContextProvider = (props) => {
 
     useEffect(() => {
         const getProducts = async () => {
-            const data = await fetchProducts();
+          const data = await fetchProducts();
           setProducts(data);
           console.log(data);
         }
         getProducts();
     }, [])
-
+  
     return (
         <ProductsContext.Provider value={{ products }}>
           {props.children}

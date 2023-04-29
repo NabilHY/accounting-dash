@@ -1,10 +1,13 @@
 import axios from 'axios';
 
-const BASE_URL = "https://4338-196-77-120-82.ngrok-free.app/api/";
+const BASE_URL = "https://iker.wiicode.tech/api/";
 
 const fetchProducts = async () => {
-    const response = await axios.get(`${BASE_URL}articls`);
-    return response.data;
+    const response = await fetch(`${BASE_URL}articles`);
+    const data = await response.json();
+    return data;
 }
+
+
 
 export { fetchProducts };

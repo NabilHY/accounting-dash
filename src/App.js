@@ -18,6 +18,7 @@ import Deliveries from "./routes/deliveries/Deliveries";
 import Stats from "./routes/stats/Stats";
 import Agenda from "./routes/agenda/Agenda";
 import { ProductsContextProvider } from "./context/productsContext";
+import { CategoriesContextProvider } from "./context/categoriesContext";
 import { productInputs, userInputs } from "./formSource";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
@@ -80,11 +81,13 @@ function App() {
             <Route path="vente" element={<Sales />} /> 
             <Route path="crm" element={<Subscribtions />} /> 
             <Route path="products" element={
-                <RequireAuth>
+              <RequireAuth>
+                <CategoriesContextProvider>
                   <ProductsContextProvider>
                     <Products />
                   </ProductsContextProvider>
-                </RequireAuth>
+                </CategoriesContextProvider>
+              </RequireAuth>
               } />
 
             <Route path="ordres" element={<Orders />} />
