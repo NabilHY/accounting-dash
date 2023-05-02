@@ -17,7 +17,7 @@ import { IoMdDownload } from "react-icons/io";
 import { MdFormatListBulletedAdd, MdOutlineNoteAdd } from "react-icons/md";
 import "./quick-access.scss";
 
-const QuickAccess = ({ type }) => {
+const QuickAccess = ({ type, prop }) => {
   console.log("mounted");
 
   let data;

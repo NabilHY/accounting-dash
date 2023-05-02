@@ -7,14 +7,18 @@ export const CategoriesContextProvider = (props) => {
 
   const [categories, setCategories] = useState([]);
   const [productsByCategoryId, setProductsByCategoryId] = useState({});
+  const [categoriesSelect, setCategoriesSelect] = useState('');
   const [id, setId] = useState('');
 
   useEffect(() => {
     const getCategories = async () => {
       const data = await fetchCategories();
       const categoriesArray = data.map(item => ({ id: item.id, category: item.category }));
+      const categoriesOptions = data.map(category => category.category).filter(category => category.category !== 'Tous')
+      setCategoriesSelect(categoriesOptions)
       setCategories(categoriesArray);
     }
+    console.log(categoriesSelect)
     getCategories();
   }, [])
 
@@ -32,7 +36,7 @@ export const CategoriesContextProvider = (props) => {
   }, [id])
 
   return (
-    <CategoriesContext.Provider value={{ categories, productsByCategoryId, id, setId }}>
+    <CategoriesContext.Provider value={{ categories, productsByCategoryId, id, setId, categoriesSelect}}>
       {props.children}
     </CategoriesContext.Provider>
   );

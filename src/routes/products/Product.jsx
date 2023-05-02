@@ -8,6 +8,7 @@ import Categories from "../../components/categories/Category";
 import List from "../../components/table/Table";
 import QuickAccess from "../../components/quick-accesses/QuickAccess";
 import { articles, headers } from "../../mocks/articles/articles";
+import { ExampleModal } from "../../components/popup/PopUp"; 
 import "./products.scss";
 
 const Products = ({ id }) => {
@@ -17,6 +18,7 @@ const Products = ({ id }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { products, setProducts } = useContext(ProductsContext);
   const { categories, productsByCategoryId, setId } = useContext(CategoriesContext);
+  const [showModal, setShowModal] = useState(false)
   const [parentSelectedId, setParentSelectedId] = useState(1);
   const [activeData, setActiveData] = useState(products);
 
@@ -71,6 +73,14 @@ const Products = ({ id }) => {
     setId(category.id); 
   };
 
+  const handleOpen = () => {
+    setShowModal(true);
+  }
+
+  const handleClose = () => {
+    setShowModal(false);
+  }
+
   return (
     <div className="product">
       <Sidebar />
@@ -78,7 +88,9 @@ const Products = ({ id }) => {
         <Navbar />
         <div className="quick-access-container">
           <QuickAccess type="ajouter-category" />
-          <QuickAccess type="ajouter-produit" />
+          <div onClick={handleOpen}>
+            <QuickAccess type="ajouter-produit" />
+          </div>
         </div>
         <div className="componentsContainer">
           <Categories
@@ -91,8 +103,10 @@ const Products = ({ id }) => {
             <p>Loading...</p>
           ) : (
             <List data={activeData} heade={headers} prop={true} />
-)}
-  
+          )}
+          {
+            showModal && <ExampleModal show={true} handleClose={handleClose} />
+          }
         </div>
       </div>
     </div>
