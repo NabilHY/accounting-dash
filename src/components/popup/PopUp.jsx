@@ -10,10 +10,50 @@ import {
   Typography,
 } from "@mui/material";
 
-export const ExampleModal = ({show, handleClose}) => {
+export const ExampleModal = ({show, handleClose, type, select}) => {
   const [open, setOpen] = useState(false);
   const [formState, setFormState] = useState({});
+  const [formData, setFormData] = useState({});
+  const [baseUrl, setBaseUrl] = useState('');
+  const [fields, setFields] = useState([]);
   const [errors, setErrors] = useState({});
+  const [selectInputs, setSelectInputs] = useState([]);
+
+  useEffect(() => {
+    if (select) {
+      setSelectInputs(select);
+      console.log(selectInputs);
+    }
+
+    switch (type) {
+      case 'produit':
+        setFields([
+          { label: 'Article libelle', name: 'article_libelle' },
+          { label: 'Reference', name: 'reference' },
+          { label: 'Prix unitaire', name: 'prix_unitaire' },
+          { label: 'Prix public', name: 'prix_public' },
+          { label: 'Client Fedele', name: 'client_Fedele' },
+          { label: 'Demi grossiste', name: 'demi_grossiste' },
+          { label: 'Unite', name: 'unite' },
+        ]);
+        setBaseUrl('https://iker.wiicode.tech/api/articles');
+        setFormData({
+          title: 'Ajouter Un Produit',
+        })
+        break;
+      case 'category':
+        setFields([
+          { label: 'Category', name: 'category' },
+        ])
+        setBaseUrl('https://iker.wiicode.tech/api/categories')
+        setFormData({
+          title: 'Ajouter Une Category',
+        })
+        break;
+      default:
+        break;
+    }
+  }, [type]);
 
 
 
@@ -33,9 +73,8 @@ export const ExampleModal = ({show, handleClose}) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    formState({ ...formState, [name]: value });
+    setFormState({ ...formState, [name]: value });
   }
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormState({ ...formState, [name]: value });
@@ -44,43 +83,30 @@ export const ExampleModal = ({show, handleClose}) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { article_libelle, reference, prix_unitaire, prix_public, client_Fedele, demi_grossiste, unite, category_id} = formState;
-    // const validationErrors = {};
-    // // if (Object.keys(validationErrors).length > 0) {
-    //   setErrors(validationErrors);
-    // } else {
-      const data = { article_libelle, reference, prix_unitaire, prix_public, client_Fedele, demi_grossiste, unite, category_id };
-      const response = await fetch("https://iker.wiicode.tech/api/articles", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      if (response.ok) {
-        console.log("Employee added successfully");
-        handleClose();
-      } else {
-        console.error("Failed to add employee");
-      }
+    const data = {};
+    for (const [key, value] of Object.entries(formState)) {
+      data[key] = value;
+    }
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      console.log(`${type} added successfully`);
+      handleClose();
+    } else {
+      console.error("Failed to add employee");
+    }
     handleClose();
   };
-
-  const fields = [
-    { label: 'Article libelle', name: 'article_libelle' },
-    { label: 'Reference', name: 'reference' },
-    { label: 'Prix unitaire', name: 'prix_unitaire' },
-    { label: 'Prix public', name: 'prix_public' },
-    { label: 'Client Fedele', name: 'client_Fedele' },
-    { label: 'Demi grossiste', name: 'demi_grossiste' },
-    { label: 'Unite', name: 'unite' },
-    { label: 'Category ID', name: 'category_id' },
-  ];
   
   const modalBody = (
     <>
     <Typography variant="h6" gutterBottom>
-      Add New Item
+     {formData.title}
     </Typography>
     <form onSubmit={handleSubmit}>
       {fields.map((field) => (
@@ -99,12 +125,34 @@ export const ExampleModal = ({show, handleClose}) => {
           sx={{ mb: 2 }}
         />
       ))}
+      {
+        select && selectInputs.length > 0 && 
+        <Select
+            labelId="category-select-label"
+              id="category-select"
+              name="category_id"
+              value={formState.category_id || ''}
+              onChange={handleChange}
+              label="Category"
+              margin="normal"
+              fullWidth
+              required
+              variant="outlined"
+              sx={{ mb: 2 }}
+        >
+            {selectInputs.map((category) => (
+                <MenuItem key={category.id} value={category.id}>
+                    {category.category}
+                </MenuItem>
+            ))}
+        </Select>
+}  
       <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Button variant="outlined" onClick={handleClose} sx={{ mr: 1 }}>
-          Cancel
+          Annuler
         </Button>
         <Button type="submit" variant="contained" sx={{ bgcolor: 'primary.main', color: 'primary.contrastText' }}>
-          Save
+          Enregistrer
         </Button>
       </Box>
     </form>
@@ -117,6 +165,7 @@ export const ExampleModal = ({show, handleClose}) => {
       alignItems: 'center',
       justifyContent: 'center'
     }}>
+      
         <Box
           sx={{
             bgcolor: 'background.paper',

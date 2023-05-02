@@ -17,8 +17,10 @@ const Products = ({ id }) => {
   const [data, setData] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const { products, setProducts } = useContext(ProductsContext);
-  const { categories, productsByCategoryId, setId } = useContext(CategoriesContext);
+  const { categories, productsByCategoryId, setId, categoriesSelect } = useContext(CategoriesContext);
+  const [selectOptions, setSelectOptions] = useState([]);
   const [showModal, setShowModal] = useState(false)
+  const [modalType, setModalType] = useState('');
   const [parentSelectedId, setParentSelectedId] = useState(1);
   const [activeData, setActiveData] = useState(products);
 
@@ -34,7 +36,7 @@ const Products = ({ id }) => {
     "category_id",
     "created_at",
   ];
-
+  
   useEffect(() => {
     const getProducts = async () => {
       const data = await fetchProducts();
@@ -73,8 +75,15 @@ const Products = ({ id }) => {
     setId(category.id); 
   };
 
-  const handleOpen = () => {
+  const handleOpen1 = () => {
     setShowModal(true);
+    setModalType('category');
+  }
+
+  const handleOpen2 = () => {
+    setShowModal(true);
+    setSelectOptions(categories);
+    setModalType('produit');
   }
 
   const handleClose = () => {
@@ -87,8 +96,10 @@ const Products = ({ id }) => {
       <div className="productContainer">
         <Navbar />
         <div className="quick-access-container">
-          <QuickAccess type="ajouter-category" />
-          <div onClick={handleOpen}>
+          <div onClick={handleOpen1}> 
+            <QuickAccess type="ajouter-category" />
+          </div>
+          <div onClick={handleOpen2}>
             <QuickAccess type="ajouter-produit" />
           </div>
         </div>
@@ -105,7 +116,7 @@ const Products = ({ id }) => {
             <List data={activeData} heade={headers} prop={true} />
           )}
           {
-            showModal && <ExampleModal show={true} handleClose={handleClose} />
+            showModal && <ExampleModal show={true} handleClose={handleClose} type={modalType} select={selectOptions} />
           }
         </div>
       </div>
