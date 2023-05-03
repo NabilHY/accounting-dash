@@ -1,0 +1,14 @@
+.subscriptions {
+  display: flex;
+}
+.subscriptions .subscriptionsContainer {
+  flex: 6;
+}
+.subscriptions .subscriptionsContainer .top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.subscriptions .subscriptionsContainer .top-container > * {
+  margin-right: 20px;
+}/*# sourceMappingURL=subscriptions.css.map */

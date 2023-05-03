@@ -50,6 +50,22 @@ export const ExampleModal = ({show, handleClose, type, select}) => {
           title: 'Ajouter Une Category',
         })
         break;
+      case 'fournisseur':
+        setFields([
+          { label: 'Code fournisseur', name: 'code_fournisseur' },
+          { label: 'Fournisseur', name: 'fournisseur' },
+          { label: 'ICE', name: 'ICE' },
+          { label: 'IF', name: 'IF' },
+          { label: 'RC', name: 'RC' },
+          { label: 'Adresse', name: 'Adresse' },
+          { label: 'E-mail', name: 'email' },
+          { label: 'Telephone', name: 'telephone' }, 
+        ])
+        setBaseUrl('https://iker.wiicode.tech/api/fournisseurs')
+        setFormData({
+          title: 'Ajouter Un Fournisseurs',
+        })
+        break;
       default:
         break;
     }

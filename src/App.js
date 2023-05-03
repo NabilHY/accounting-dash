@@ -19,6 +19,8 @@ import Stats from "./routes/stats/Stats";
 import Agenda from "./routes/agenda/Agenda";
 import { ProductsContextProvider } from "./context/productsContext";
 import { CategoriesContextProvider } from "./context/categoriesContext";
+import { FournisseursContextProvider } from "./context/fournisseursContext";
+import { BonsCommandContext, BonsCommandContextProvider } from './context/bonCommandeContext'
 import { productInputs, userInputs } from "./formSource";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
@@ -76,7 +78,17 @@ function App() {
             <Route path="inventaire" element={<Inventory />} />
             <Route path="depense" element={<Expenses />} />
             <Route path="banque-caisse" element={<Bank />} />
-            <Route path="achat" element={<Purchases />} />
+            <Route path="achat" element={
+              <FournisseursContextProvider>
+                <CategoriesContextProvider>
+                  <ProductsContextProvider>
+                    <BonsCommandContextProvider>
+                        <Purchases />
+                    </BonsCommandContextProvider>
+                  </ProductsContextProvider>
+                </CategoriesContextProvider>
+              </FournisseursContextProvider>
+            } />
             <Route path="comptabilite" element={<Accounting />} />
             <Route path="vente" element={<Sales />} /> 
             <Route path="crm" element={<Subscribtions />} /> 

@@ -1,0 +1,14 @@
+.deliveries {
+  display: flex;
+}
+.deliveries .deliveriesContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 6;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.deliveries .deliveriesContainer .container {
+  display: flex;
+  justify-content: flex-start;
+}/*# sourceMappingURL=deliveries.css.map */

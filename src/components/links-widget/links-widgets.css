@@ -1,0 +1,59 @@
+.links-widget {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+  padding: 10px;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+  height: 200px;
+}
+.links-widget .left,
+.links-widget .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.links-widget .left .title,
+.links-widget .right .title {
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(41, 41, 41);
+}
+.links-widget .left .counter,
+.links-widget .right .counter {
+  font-size: 28px;
+  font-weight: 300;
+}
+.links-widget .left .number,
+.links-widget .right .number {
+  font-weight: bold;
+  font-size: 28px;
+}
+.links-widget .left .link,
+.links-widget .right .link {
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 12px;
+  border-bottom: 1px solid gray;
+}
+.links-widget .left .percentage,
+.links-widget .right .percentage {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.links-widget .left .percentage.positive,
+.links-widget .right .percentage.positive {
+  color: green;
+}
+.links-widget .left .percentage.negative,
+.links-widget .right .percentage.negative {
+  color: red;
+}
+.links-widget .left .icon,
+.links-widget .right .icon {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  align-self: flex-end;
+}/*# sourceMappingURL=links-widgets.css.map */

@@ -1,0 +1,47 @@
+.categories {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 120vh;
+}
+
+.categoriesSidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px 0;
+  margin: 0 30px;
+}
+
+.categoriesSidebar a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.categoriesSidebar a:hover {
+  background-color: #ff8c00;
+  color: #fff;
+}
+
+.categoriesSidebar a.active {
+  background-color: #eee;
+}
+
+.categoriesSidebar a .active {
+  color: #FFF;
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #ff8c00;
+  transition: all 0.3s ease-in-out;
+}/*# sourceMappingURL=categories.css.map */

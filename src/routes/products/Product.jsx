@@ -8,7 +8,7 @@ import Categories from "../../components/categories/Category";
 import List from "../../components/table/Table";
 import QuickAccess from "../../components/quick-accesses/QuickAccess";
 import { articles, headers } from "../../mocks/articles/articles";
-import { ExampleModal } from "../../components/popup/PopUp"; 
+import { ExampleModal } from "../../components/popup/PopUp";
 import "./products.scss";
 
 const Products = ({ id }) => {
@@ -17,10 +17,11 @@ const Products = ({ id }) => {
   const [data, setData] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const { products, setProducts } = useContext(ProductsContext);
-  const { categories, productsByCategoryId, setId, categoriesSelect } = useContext(CategoriesContext);
+  const { categories, productsByCategoryId, setId, categoriesSelect } =
+    useContext(CategoriesContext);
   const [selectOptions, setSelectOptions] = useState([]);
-  const [showModal, setShowModal] = useState(false)
-  const [modalType, setModalType] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [modalType, setModalType] = useState("");
   const [parentSelectedId, setParentSelectedId] = useState(1);
   const [activeData, setActiveData] = useState(products);
 
@@ -36,7 +37,7 @@ const Products = ({ id }) => {
     "category_id",
     "created_at",
   ];
-  
+
   useEffect(() => {
     const getProducts = async () => {
       const data = await fetchProducts();
@@ -50,9 +51,9 @@ const Products = ({ id }) => {
     if (parentSelectedId === 1) {
       setActiveData(products);
     } else {
-      setActiveData(productsByCategoryId)
+      setActiveData(productsByCategoryId);
     }
-}, [parentSelectedId, products, productsByCategoryId]);
+  }, [parentSelectedId, products, productsByCategoryId]);
 
   useEffect(() => {
     const getArrayByKey = (key) => {
@@ -67,28 +68,28 @@ const Products = ({ id }) => {
 
   useEffect(() => {
     console.log(activeData);
-  }, [activeData])
+  }, [activeData]);
 
   const handleSelectedCategoryChange = (category) => {
     setSelectedCategory(category.id);
     setSelectedId(category.id);
-    setId(category.id); 
+    setId(category.id);
   };
 
   const handleOpen1 = () => {
     setShowModal(true);
-    setModalType('category');
-  }
+    setModalType("category");
+  };
 
   const handleOpen2 = () => {
     setShowModal(true);
     setSelectOptions(categories);
-    setModalType('produit');
-  }
+    setModalType("produit");
+  };
 
   const handleClose = () => {
     setShowModal(false);
-  }
+  };
 
   return (
     <div className="product">
@@ -96,7 +97,7 @@ const Products = ({ id }) => {
       <div className="productContainer">
         <Navbar />
         <div className="quick-access-container">
-          <div onClick={handleOpen1}> 
+          <div onClick={handleOpen1}>
             <QuickAccess type="ajouter-category" />
           </div>
           <div onClick={handleOpen2}>
@@ -111,13 +112,18 @@ const Products = ({ id }) => {
             onSelectedCategoryChange={handleSelectedCategoryChange}
           />
           {isLoading ? (
-            <p>Loading...</p>
+            <p>Chargement...</p>
           ) : (
             <List data={activeData} heade={headers} prop={true} />
           )}
-          {
-            showModal && <ExampleModal show={true} handleClose={handleClose} type={modalType} select={selectOptions} />
-          }
+          {showModal && (
+            <ExampleModal
+              show={true}
+              handleClose={handleClose}
+              type={modalType}
+              select={selectOptions}
+            />
+          )}
         </div>
       </div>
     </div>
