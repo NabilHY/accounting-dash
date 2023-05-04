@@ -14,7 +14,7 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { HiUpload } from "react-icons/hi";
 import { AiFillPrinter } from "react-icons/ai";
 import { IoMdDownload } from "react-icons/io";
-import { MdFormatListBulletedAdd, MdOutlineNoteAdd } from "react-icons/md";
+import { MdFormatListBulletedAdd, MdOutlineNoteAdd, MdPostAdd } from "react-icons/md";
 import "./quick-access.scss";
 
 const QuickAccess = ({ type, prop }) => {
@@ -168,6 +168,13 @@ const QuickAccess = ({ type, prop }) => {
         title: "Ajouter Produit",
         icon:  <MdOutlineNoteAdd />,
         background: "#521A33",
+      }
+      break
+    case "ajouter-bons":
+      data = {
+        title: "Ajouter Un Nouveaux Bons",
+        icon: <MdPostAdd />,
+        background: "#8FBDD3",
       }
       break;
     default:
