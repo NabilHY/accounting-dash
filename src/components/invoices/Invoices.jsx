@@ -58,11 +58,11 @@ const Invoices = ({ type }) => {
           <div onClick={handleOpen}>
             <QuickAccess type="ajouter-bons" />
           </div>
-          {/* <SideWindowOptions
+          <SideWindowOptions
             type={type}
             handleSelectedMonth={handleSelectedMonth}
-          /> */}
-          {/* {tableData && <InvoiceListing type={type} />} */}
+          />
+          {tableData !== "" && <InvoiceListing type={type} />}
           <Modal
             open={open}
             onClose={handleClose}
@@ -81,10 +81,11 @@ const Invoices = ({ type }) => {
                 textAlign: "center",
                 margin: "auto",
                 marginTop: "20vh",
+                maxHeight: "90vh",
+                overflowY: "auto"                
               }}
               >
-              <FormStepper
-                show={true}
+              <FormStepper  
                 handleClose={handleClose}
                 type={"ajouter-bons"}
               />
