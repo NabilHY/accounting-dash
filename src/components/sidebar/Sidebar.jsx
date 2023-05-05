@@ -42,12 +42,12 @@ const Sidebar = () => {
               <span>Employés</span>
             </li>
           </Link>
-          <Link to="/inventaire" style={{ textDecoration: "none" }}>
+          {/* <Link to="/inventaire" style={{ textDecoration: "none" }}>
             <li>
               <InventoryIcon className="icon" />
               <span>Inventaire</span>
             </li>
-          </Link>
+          </Link> */}
             <Link to="/depense" style={{ textDecoration: "none" }}>
               <li>
                 <CurrencyExchangeIcon className="icon" />
@@ -60,12 +60,12 @@ const Sidebar = () => {
                 <span>Banque/Caisse</span>
               </li>
             </Link>
-            <Link to="/comptabilite" style={{ textDecoration: "none" }}>
+            {/* <Link to="/comptabilite" style={{ textDecoration: "none" }}>
               <li>
                 <BookIcon className="icon" />
                 <span>Comptabilite</span>
               </li>
-            </Link>
+            </Link> */}
           <Link to="/achat" style={{ textDecoration: "none" }}>
             <li>
               <ShoppingBasketIcon className="icon" />
@@ -90,30 +90,30 @@ const Sidebar = () => {
                 <span>Produits</span>
               </li>
           </Link>
-          <Link to="/ordres" style={{ textDecoration: "none" }}>
+          {/* <Link to="/ordres" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>Ordres</span>
             </li>
-          </Link>
-          <Link to="/distribution" style={{ textDecoration: "none" }}>
+          </Link> */}
+          {/* <Link to="/distribution" style={{ textDecoration: "none" }}>
             <li>
               <LocalShippingIcon className="icon" />
               <span>Distribution</span>
             </li>
-          </Link>
-          <Link to="/stats" style={{ textDecoration: "none" }}>
+          </Link> */}
+          {/* <Link to="/stats" style={{ textDecoration: "none" }}>
             <li>
               <InsertChartIcon className="icon" />
               <span>Statistiques</span>
             </li>
-          </Link>
-          <Link to="/agenda" style={{ textDecoration: "none" }}>
+          </Link> */}
+          {/* <Link to="/agenda" style={{ textDecoration: "none" }}>
             <li>
                 <TodayIcon className="icon" />
                 <span>Agenda</span>
             </li>
-          </Link>
+          </Link> */}
         </ul>
       </div>
       <div className="bottom">

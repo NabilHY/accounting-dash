@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "category": "tous",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 2,
+    "category": "Jus valencia",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 3,
+    "category": "Ain Ifrane",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 4,
+    "category": "Valencia",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 5,
+    "category": "Mondial",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 6,
+    "category": "Services et Soldes",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 7,
+    "category": "Cadeaux",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 8,
+    "category": "Rita",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 9,
+    "category": "Laiko",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 10,
+    "category": "Amiris",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 11,
+    "category": "Hell Energy Drink",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 12,
+    "category": "Gacidis",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  },
+  {
+    "id": 13,
+    "category": "Zakia",
+    "created_at": "2023-04-27T10:27:40.000000Z",
+    "updated_at": null
+  }
+]

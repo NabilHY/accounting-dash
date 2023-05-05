@@ -1,12 +1,12 @@
 import React from 'react';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
-import "./subscriptions.scss";
 import QuickAccess from '../../components/quick-accesses/QuickAccess';
 import Chart from '../../components/graph/Graph';
 import { data } from '../../mocks/crm/crm-mock';
 import InfoBar from '../../components/info-bar/InfoBar';
 import { graphData } from '../../mocks/crm/chart-data';
+import "./subscriptions.scss";
 
 const Subscriptions = () => {
   return (

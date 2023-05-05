@@ -14,9 +14,10 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { HiUpload } from "react-icons/hi";
 import { AiFillPrinter } from "react-icons/ai";
 import { IoMdDownload } from "react-icons/io";
+import { MdFormatListBulletedAdd, MdOutlineNoteAdd, MdPostAdd } from "react-icons/md";
 import "./quick-access.scss";
 
-const QuickAccess = ({ type }) => {
+const QuickAccess = ({ type, prop }) => {
   console.log("mounted");
 
   let data;
@@ -153,6 +154,27 @@ const QuickAccess = ({ type }) => {
         title: "Secteurs",
         icon: <BsPinMapFill />,
         background: "#000",
+      }
+      break;
+    case "ajouter-category":
+      data = {
+        title: "Ajouter Category",
+        icon: <MdFormatListBulletedAdd />,
+        background: "#454321",
+      }
+      break;
+    case "ajouter-produit":
+      data = {
+        title: "Ajouter Produit",
+        icon:  <MdOutlineNoteAdd />,
+        background: "#521A33",
+      }
+      break
+    case "ajouter-bons":
+      data = {
+        title: "Ajouter Un Nouveaux Bons",
+        icon: <MdPostAdd />,
+        background: "#8FBDD3",
       }
       break;
     default:

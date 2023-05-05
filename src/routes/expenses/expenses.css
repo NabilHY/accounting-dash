@@ -1,0 +1,30 @@
+.expenses {
+  display: flex;
+}
+.expenses .expensesContainer {
+  flex: 6;
+}
+.expenses .expensesContainer .quick-access-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  align-items: center;
+}
+.expenses .expensesContainer .chart-and-table-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+  margin-bottom: 20px;
+  padding: 3%;
+}
+.expenses .expensesContainer .pie {
+  width: 385px;
+  height: 385px;
+}
+.expenses .expensesContainer .pie-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=expenses.css.map */
